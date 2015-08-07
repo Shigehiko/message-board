@@ -14,31 +14,10 @@
   </div>
 </div>
 
-<%= form_for(Message.new) do |f| %>
-<% if @message.errors.present? %>
-    <div class="alert alert-danger">
-      <%= alert %>
-      <ul>
-        <% @message.errors.full_messages.each do |full_message| %>
-          <li>
-            <%= full_message %>
-          </li>
-        <% end %> 
-      </ul>
-    </div>
-  <% end %>
-  
-<div style="display:block;">
-  名前:
-  <%= f.text_field :name %>
-</div>
+<% #部分テンプレートを読み込んでいる %>
+<%= render 'form' %>
 
-<div style="display:block; margin-top:5px; ">
-  <span style="text-align:left; vertical-align:top;">内容:</span>
-  <%= f.text_area :body, :size => "70x5" %>
-  </div>
+
+
+
   
-  <div style="margin-left:35px;">
-  <%= f.submit class: "btn btn-sm btn-primary" %>
-  </div>
-<% end %>
