@@ -9,6 +9,7 @@
       <span style="color:#123456;" class="glyphicon glyphicon-user"><%= message.name %></span>
       </div>
       <%= message.body %>
+      (<%= link_to "edit" , edit_message_path(message) %>)
       <br>
     <% end %>
   </div>
