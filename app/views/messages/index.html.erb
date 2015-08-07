@@ -5,7 +5,9 @@
     
   <div class="panel-body">
     <% @messages.each do |message| %>
-      <span class="label label-info"><%= message.name %></span>
+    <div style="display:block;">
+      <span style="color:#123456;" class="glyphicon glyphicon-user"><%= message.name %></span>
+      </div>
       <%= message.body %>
       <br>
     <% end %>
@@ -13,10 +15,17 @@
 </div>
 
 <%= form_for(Message.new) do |f| %>
+<div style="display:block;">
   名前:
   <%= f.text_field :name %>
+</div>
 
-  内容:
-  <%= f.text_area :body %>
+<div style="display:block; margin-top:5px; ">
+  <span style="text-align:left; vertical-align:top;">内容:</span>
+  <%= f.text_area :body, :size => "70x5" %>
+  </div>
+  
+  <div style="margin-left:35px;">
   <%= f.submit class: "btn btn-sm btn-primary" %>
+  </div>
 <% end %>
